@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta agências – Cargo Blue</title>
+    <title>Consulta de Agências – Cargo Blue</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,40 +39,102 @@
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
+            display: none; /* Oculta todos inicialmente */
         }
     </style>
 </head>
 <body>
 
-    <h1>Consulta agências – Cargo Blue</h1>
+    <h1>Consulta de Agências – Cargo Blue</h1>
 
     <div class="search-box">
         <input type="text" id="search" placeholder="Digite o nome do banco..." onkeyup="searchBank()">
     </div>
 
     <ul class="results" id="results">
-        <li>Itau — Código 341</li>
+        <li>Agibank — Código 121</li>
         <li>Ailos — Código 085</li>
+        <li>ABC Brasil — Código 246</li>
+        <li>Alfa — Código 025</li>
+        <li>Andbank (Brasil) — Código 065</li>
+        <li>Arbi — Código 213</li>
         <li>Banco do Brasil — Código 001</li>
-        <li>Caixa Econômica Federal — Código 104</li>
+        <li>Banestes — Código 021</li>
+        <li>Bari — Código 330</li>
         <li>Bradesco — Código 237</li>
-        <li>Santander — Código 033</li>
-        <li>Nubank — Código 260</li>
+        <li>Bradescard — Código 063</li>
+        <li>Bradesco BBI — Código 036</li>
+        <li>Bradesco Berj — Código 122</li>
+        <li>Bradesco Financiamentos — Código 394</li>
+        <li>BTG Pactual — Código 208</li>
+        <li>BMG — Código 318</li>
+        <li>BNDES — Código 007</li>
+        <li>BS2 — Código 218</li>
+        <li>Caixa Econômica Federal — Código 104</li>
         <li>C6 Bank — Código 336</li>
-        <li>Banco Inter — Código 077</li>
+        <li>Citibank — Código 745</li>
+        <li>Clássico — Código 241</li>
+        <li>Cooperativo do Brasil (Bancoob) — Código 756</li>
+        <li>Cooperativo Sicredi — Código 748</li>
+        <li>Credit Suisse (Brasil) — Código 505</li>
+        <li>Crefisa — Código 069</li>
+        <li>CSF — Código 368</li>
+        <li>Daycoval — Código 707</li>
+        <li>Digio — Código 626</li>
+        <li>Digimais — Código 654</li>
+        <li>Inter — Código 077</li>
+        <li>Itaú — Código 341</li>
+        <li>Itaú BBA — Código 184</li>
+        <li>Itaú Consignado — Código 029</li>
+        <li>Itaubank — Código 479</li>
+        <li>John Deere — Código 217</li>
+        <li>J.P. Morgan — Código 376</li>
+        <li>J. Safra — Código 074</li>
+        <li>Modal — Código 746</li>
+        <li>Neon — Código 735</li>
+        <li>Nubank — Código 260</li>
+        <li>Next — Código 299</li>
+        <li>Original — Código 212</li>
+        <li>Pan — Código 623</li>
+        <li>PagBank — Código 290</li>
+        <li>PagSeguro — Código 197</li>
+        <li>PicPay — Código 380</li>
+        <li>Safra — Código 422</li>
+        <li>Santander — Código 033</li>
         <li>Sicoob — Código 756</li>
         <li>Sicredi — Código 748</li>
-        <li>Banco Original — Código 212</li>
-        <li>Banco Pan — Código 623</li>
-        <li>Banco Safra — Código 422</li>
-        <li>Banco Modal — Código 746</li>
-        <li>Banco Banrisul — Código 041</li>
-        <li>Banco BMG — Código 318</li>
-        <li>Banco BTG Pactual — Código 208</li>
-        <li>Banco Mercantil do Brasil — Código 389</li>
-        <li>Banco Votorantim — Código 655</li>
-        <li>Banco Neon — Código 735</li>
-        <li>Banco Digio — Código
+        <li>Sofisa — Código 637</li>
+        <li>VR — Código 610</li>
+        <li>Western Union — Código 119</li>
+        <li>Woori Bank — Código 124</li>
+        <li>XP — Código 348</li>
+    </ul>
+
+    <script>
+        function searchBank() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const results = document.getElementById('results').getElementsByTagName('li');
+
+            // Oculta todos inicialmente
+            for (let i = 0; i < results.length; i++) {
+                results[i].style.display = 'none';
+            }
+
+            if (input === '') return; // Não mostra nada se o campo estiver vazio
+
+            // Mostra apenas os bancos que correspondem à pesquisa
+            for (let i = 0; i < results.length; i++) {
+                let bank = results[i].textContent.toLowerCase();
+                if (bank.includes(input)) {
+                    results[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
 
 
      
