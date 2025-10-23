@@ -45,7 +45,6 @@
             margin: 5px 0;
             padding: 10px;
             border-radius: 5px;
-            display: none; /* Oculta todos inicialmente */
         }
     </style>
 </head>
@@ -121,18 +120,21 @@
             const input = document.getElementById('search').value.toLowerCase();
             const results = document.getElementById('results').getElementsByTagName('li');
 
-            // Oculta todos inicialmente
-            for (let i = 0; i < results.length; i++) {
-                results[i].style.display = 'none';
+            if (input === '') {
+                // Se não digitou nada, mostra todos
+                for (let i = 0; i < results.length; i++) {
+                    results[i].style.display = '';
+                }
+                return;
             }
-
-            if (input === '') return; // Não mostra nada se o campo estiver vazio
 
             // Mostra apenas os bancos que correspondem à pesquisa
             for (let i = 0; i < results.length; i++) {
                 let bank = results[i].textContent.toLowerCase();
                 if (bank.includes(input)) {
                     results[i].style.display = 'block';
+                } else {
+                    results[i].style.display = 'none';
                 }
             }
         }
